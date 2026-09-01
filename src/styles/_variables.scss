@@ -1,0 +1,10 @@
+$spacing-unit: 8px;
+
+@function spacing($multiplier) {
+  @return $spacing-unit * $multiplier;
+}
+
+// Colours
+$colour-black: #000000;
+$colour-white: #ffffff;
+$colour-orange: #fcbd1b;
