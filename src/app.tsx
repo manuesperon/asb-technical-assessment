@@ -10,6 +10,12 @@ const menuItems: MenuItem[] = [
   { label: "Contact", href: "#" },
 ];
 
+// Wire this to a hook that fetches the user from the API
+const mockUser = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
 export const App: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -26,7 +32,10 @@ export const App: FC = () => {
       />
       <Menu isOpen={isMenuOpen} items={menuItems} />
       <main aria-hidden={isMenuOpen}>
-        <CardRegistrationForm />
+        <h2>Welcome {mockUser.firstName}</h2>
+        <CardRegistrationForm
+          onSubmit={(values) => console.log("submit", values)}
+        />
       </main>
     </div>
   );

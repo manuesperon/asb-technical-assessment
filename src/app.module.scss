@@ -1,3 +1,5 @@
+@use "./styles/variables" as *;
+
 body {
   font-family: "Overpass", sans-serif;
   margin: 0;
@@ -5,4 +7,16 @@ body {
 
 .app {
   text-align: center;
+  height: 100vh;
+
+  main {
+    // Substract the height of the header (64px)
+    height: calc(100vh - 64px);
+    box-sizing: border-box;
+    padding: spacing(2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

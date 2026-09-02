@@ -1,6 +1,66 @@
 @use "../../styles/variables" as *;
 
 .cardRegistrationForm {
-  background-color: $colour-white;
-  color: $colour-black;
+  display: flex;
+  flex-direction: column;
+  gap: spacing(2);
+  width: 100%;
+  max-width: 400px;
+
+  .cvcExpireFieldsContainer {
+    display: flex;
+    gap: spacing(2);
+    width: 100%;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(0.5);
+    align-items: flex-start;
+
+    &.ccNumberField {
+      width: 100%;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: $colour-black;
+    }
+  }
+
+  .cvcExpireFieldsContainer {
+    display: flex;
+    gap: spacing(2);
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid $colour-orange;
+    width: 100%;
+    &:focus-visible {
+      @include focus-visible-outline(2px, $colour-black);
+    }
+  }
+
+  button {
+    background-color: $colour-orange;
+    color: $colour-black;
+    font-family: inherit;
+    border: none;
+    padding: spacing(1);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    &:focus-visible {
+      @include focus-visible-outline(0, $colour-black);
+    }
+  }
 }
