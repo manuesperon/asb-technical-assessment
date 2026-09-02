@@ -1,6 +1,8 @@
 @use "../../styles/variables" as *;
 
 .header {
+  height: spacing(8);
+  box-sizing: border-box;
   background-color: $colour-black;
   color: $colour-white;
   padding: spacing(2);
