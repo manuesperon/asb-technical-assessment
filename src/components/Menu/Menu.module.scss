@@ -35,7 +35,10 @@
           color: $colour-orange;
           transition: color 0.25s ease-in-out;
         }
-        @include focus-visible-outline();
+
+        &:focus-visible {
+          @include focus-visible-outline();
+        }
       }
     }
   }
