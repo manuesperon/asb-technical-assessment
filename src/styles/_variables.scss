@@ -1,0 +1,15 @@
+$spacing-unit: 8px;
+
+@function spacing($multiplier) {
+  @return $spacing-unit * $multiplier;
+}
+
+@mixin focus-visible-outline($offset: 2px, $colour: $colour-orange) {
+  outline: 2px solid $colour;
+  outline-offset: $offset;
+}
+
+// Colours
+$colour-black: #000000;
+$colour-white: #ffffff;
+$colour-orange: #fcbd1b;

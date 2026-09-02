@@ -37,3 +37,15 @@ You can use any tools, plugins and technologies as required for you to complete 
 
 # Submitting Assignment
 Feel free to create a public GitHub repo or private GitHub repo where it's accessible to the assessor
+
+# Implementation notes
+- Used semantic colour variables rather than literal names, so the palette can change without touching component styles.
+- Added ARIA attributes to make the components screen-reader friendly and accessible.
+- Wrote a small Proxy-based mock for SCSS modules in Jest, so components using `styles.x` class names can render without errors during tests.
+
+# Next steps
+- Add a hook to mock fetching the user's data, returning loading/error states.
+- Auto-format the expiry date field as the user types (MM/YY)
+- Restrict the card number field to numeric input only
+- Add validation and error states to the form fields
+- Add a focus trap for the menu (move focus in on open, return to trigger on close)
