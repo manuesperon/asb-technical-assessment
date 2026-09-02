@@ -2,11 +2,17 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import * as styles from "./Menu.module.scss";
 
-interface MenuProps {
-  isOpen: boolean;
+export interface MenuItem {
+  label: string;
+  href: string;
 }
 
-export const Menu: FC<MenuProps> = ({ isOpen }) => {
+interface MenuProps {
+  isOpen: boolean;
+  items: MenuItem[];
+}
+
+export const Menu: FC<MenuProps> = ({ isOpen, items }) => {
   return (
     <nav
       aria-label="Menu"
@@ -17,15 +23,11 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       aria-hidden={!isOpen}
     >
       <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
+        {items.map((item) => (
+          <li key={item.label}>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
